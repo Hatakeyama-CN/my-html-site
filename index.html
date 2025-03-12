@@ -14,126 +14,242 @@
         body {
             display: flex;
             min-height: 100vh;
-            background-color: #f5f5f5;
+            background-color: #f0f2f5; /* 少し明るい背景色に変更 */
         }
+        /* ヘッダー部分 (追加) */
+        .header-area {
+            background-color: #e9ecef;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-left h1 {
+            font-size: 20px;
+            color: #495057;
+            margin-right: 20px;
+        }
+
+        .header-search input {
+            padding: 8px 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-icon {
+            margin-right: 15px;
+            font-size: 24px; /* アイコンサイズ調整 */
+            color: #495057; /* アイコン色調整 */
+        }
+
+        .header-user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-user-icon {
+            width: 30px; /* アイコンサイズ調整 */
+            height: 30px; /* アイコンサイズ調整 */
+            border-radius: 50%;
+            background-color: #adb5bd;
+            margin-right: 5px;
+        }
+
+        .header-username {
+            color: #495057;
+            font-weight: bold;
+        }
+
+
         /* サイドメニュー */
         .sidebar {
             width: 220px;
-            background-color: #6673a5;
+            background-color: #e9ecef; /* サイドバー背景色を変更 */
             padding: 20px;
-            color: white;
+            color: #495057; /* サイドバー文字色を変更 */
+            border-right: 1px solid #ced4da; /* 右側に区切り線を追加 */
         }
         .sidebar ul {
             list-style: none;
             padding: 0;
         }
         .sidebar ul li {
-            margin: 15px 0;
+            margin: 10px 0; /* サイドバーメニュー項目の間隔を調整 */
+            padding: 8px 15px; /* メニュー項目にpaddingを追加 */
+            border-radius: 4px; /* メニュー項目に角丸を追加 */
+            transition: background-color 0.3s; /* ホバーエフェクトを追加 */
         }
+
+        .sidebar ul li:hover {
+            background-color: #ced4da; /* ホバー時の背景色 */
+        }
+
         .sidebar ul li a {
-            color: white;
+            color: #495057; /* サイドバーリンク文字色を変更 */
             text-decoration: none;
+            display: block; /* リンクをブロック要素にする */
         }
         /* メインコンテンツ */
         .main-content {
             flex: 1;
             padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 変更: グリッドレイアウト */
+            gap: 20px; /* グリッドアイテム間の間隔 */
         }
         .section {
             background: white;
-            padding: 20px;
-            margin-bottom: 20px;
+            padding: 15px; /* セクションpaddingを調整 */
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); /* ボックスシャドウを調整 */
+            border: 1px solid #ced4da; /* ボーダーを追加 */
         }
         .profile {
             display: flex;
             align-items: center;
         }
         .profile img {
-            width: 80px;
-            height: 80px;
+            width: 60px; /* プロフィール画像サイズ調整 */
+            height: 60px; /* プロフィール画像サイズ調整 */
             border-radius: 50%;
-            background: gray;
-            margin-right: 15px;
+            background: #adb5bd; /* プロフィール画像背景色 */
+            margin-right: 10px; /* プロフィール画像とテキストの間隔を調整 */
         }
         .header {
-            background: #6673a5;
-            color: white;
-            padding: 10px;
-            font-size: 18px;
+            color: #495057; /* ヘッダー文字色を変更 */
+            font-size: 16px; /* ヘッダーフォントサイズ調整 */
+            padding-bottom: 10px; /* ヘッダー下paddingを追加 */
+            margin-bottom: 10px; /* ヘッダー下marginを追加 */
+            border-bottom: 2px solid #e0e7ef; /* ヘッダー下線を追加 */
         }
         .buttons {
             display: flex;
-            justify-content: flex-end;
+            justify-content: flex-start; /* ボタンを左寄せに */
+            gap: 10px; /* ボタン間の間隔 */
+            margin-top: 15px; /* ボタン上marginを追加 */
         }
         .button {
-            background: #6673a5;
+            background: #007bff; /* ボタン色を青に変更 */
             color: white;
-            padding: 8px 12px;
-            margin: 5px;
+            padding: 8px 16px; /* ボタンpaddingを調整 */
             border: none;
             cursor: pointer;
             border-radius: 4px;
+            font-size: 14px; /* ボタンフォントサイズ調整 */
+            transition: background-color 0.3s; /* ホバーエフェクトを追加 */
         }
+
+        .button:hover {
+            background-color: #0056b3; /* ホバー時のボタン色 */
+        }
+
+        /* アイコン用CSS (例としてFont Awesomeを使用する場合) */
+        /* 必要に応じてFont Awesome CDNへのリンクをheadに追加 */
+        /* 例: <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="..."> */
+        .icon-button::before {
+            font-family: 'Font Awesome 6 Free'; /* Font Awesomeを使用する場合 */
+            font-weight: 900; /* Font Awesome Solidスタイル */
+            margin-right: 5px; /* アイコンとテキストの間隔 */
+        }
+
+        .service-icon::before { content: "\f0c0"; } /* サービスのアイコン例 (Font Awesomeのusersアイコン) */
+        .seminar-icon::before { content: "\f044"; } /* セミナーのアイコン例 (Font Awesomeのpen-to-squareアイコン) */
+        .ad-banner-icon::before { content: "\f0da"; } /* 広告・バナーのアイコン例 (Font Awesomeのbullhornアイコン) */
+        .account-info-icon::before { content: "\f007"; } /* アカウント情報のアイコン例 (Font Awesomeのuserアイコン) */
+        .rule-icon::before { content: "\f0ae"; } /* 利用規約のアイコン例 (Font Awesomeのgavelアイコン) */
+        .logout-icon::before { content: "\f2f5"; } /* ログアウトのアイコン例 (Font Awesomeのsign-out-altアイコン) */
+        .mypage-icon::before { content: "\f007"; } /* マイページのアイコン例 (Font Awesomeのuserアイコン) */
+        .contact-icon::before { content: "\f086"; } /* お問い合わせのアイコン例 (Font Awesomeのenvelopeアイコン) */
+        .home-icon::before { content: "\f015"; } /* トップへ戻るのアイコン例 (Font Awesomeのhomeアイコン) */
+        .service-list-icon::before { content: "\f03a"; } /* サービス一覧のアイコン例 (Font Awesomeのlist-altアイコン) */
+        .product-service-list-icon::before { content: "\f0cb"; } /* 商品・サービス一覧のアイコン例 (Font Awesomeのth-listアイコン) */
+        .seminar-list-icon::before { content: "\f03a"; } /* 掲載セミナー一覧のアイコン例 (Font Awesomeのlist-altアイコン) */
+        .seminar-info-icon::before { content: "\f0c5"; } /* 説明会・セミナー情報のアイコン例 (Font Awesomeのcalendar-altアイコン) */
+        .ad-list-icon::before { content: "\f03a"; } /* 広告一覧のアイコン例 (Font Awesomeのlist-altアイコン) */
+
+
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
-    <!-- サイドメニュー -->
+    <div class="header-area">
+        <div class="header-left">
+            <h1>ガス業界はサービス情報サイト</h1>
+            <div class="header-search">
+                <input type="text" placeholder="サービス名・カテゴリー(WEB検索)">
+            </div>
+        </div>
+        <div class="header-right">
+            <i class="header-icon fa-solid fa-bell"></i>
+            <i class="header-icon fa-solid fa-gear"></i>
+            <div class="header-user-info">
+                <div class="header-user-icon"></div>
+                <span class="header-username">murakawa</span>
+                <button class="button logout-icon">ログアウト</button>
+                <button class="button mypage-icon">マイページ</button>
+            </div>
+        </div>
+    </div>
+
     <div class="sidebar">
         <ul>
-            <li><a href="#">トップへ戻る</a></li>
-            <li><a href="#">マイページ</a></li>
-            <li><a href="#">サービス</a></li>
-            <li><a href="#">セミナー</a></li>
-            <li><a href="#">広告・バナー</a></li>
-            <li><a href="#">アカウント情報</a></li>
-            <li><a href="#">利用規約</a></li>
-            <li><a href="#">退会</a></li>
-            <li><a href="#">お問い合わせ</a></li>
+            <li><a href="#" class="home-icon">トップへ戻る</a></li>
+            <li><a href="#" class="mypage-icon">マイページ</a></li>
+            <li><a href="#" class="service-icon">サービス</a></li>
+            <li><a href="#" class="seminar-icon">セミナー</a></li>
+            <li><a href="#" class="ad-banner-icon">広告・バナー</a></li>
+            <li><a href="#" class="account-info-icon">アカウント情報</a></li>
+            <li><a href="#" class="rule-icon">利用規約</a></li>
+            <li><a href="#" class="logout-icon">退会</a></li>
+            <li><a href="#" class="contact-icon">お問い合わせ</a></li>
         </ul>
     </div>
 
-    <!-- メインコンテンツ -->
     <div class="main-content">
         <h2>マイページ</h2>
 
-        <!-- アカウント情報 -->
         <div class="section">
             <div class="header">アカウント情報</div>
             <div class="profile">
-                <img src="#" alt="プロフィール画像">
-                <div>
+                <img src="https://via.placeholder.com/100" alt="プロフィール画像"> <div>
                     <p>株式会社クラブネッツ</p>
                     <p>田中 太郎</p>
                 </div>
             </div>
         </div>
 
-        <!-- サービス -->
         <div class="section">
             <div class="header">サービス</div>
             <div class="buttons">
-                <button class="button">サービス一覧</button>
-                <button class="button">商品・サービス一覧</button>
+                <button class="button service-list-icon">サービス一覧</button>
+                <button class="button product-service-list-icon">商品・サービス一覧</button>
             </div>
         </div>
 
-        <!-- セミナー -->
         <div class="section">
             <div class="header">セミナー</div>
             <div class="buttons">
-                <button class="button">掲載セミナー一覧</button>
-                <button class="button">説明会・セミナー情報</button>
+                <button class="button seminar-list-icon">掲載セミナー一覧</button>
+                <button class="button seminar-info-icon">説明会・セミナー情報</button>
             </div>
         </div>
 
-        <!-- 広告・バナー -->
         <div class="section">
             <div class="header">広告・バナー</div>
             <div class="buttons">
-                <button class="button">広告一覧</button>
+                <button class="button ad-list-icon">広告一覧</button>
             </div>
         </div>
 
