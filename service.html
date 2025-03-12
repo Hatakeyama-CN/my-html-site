@@ -14,10 +14,11 @@
         body {
             display: flex; /* body を flex コンテナにする (サイドバーとメインコンテンツを横並びにする) */
             min-height: 100vh;
+            flex-direction: column;
             background-color: #f0f2f5;
         }
 
-        /* ヘッダーエリア (以前のコードから変更なし) */
+        /* ヘッダーエリア */
         .header-area {
             background-color: #e9ecef;
             padding: 10px 20px;
@@ -72,8 +73,14 @@
             font-weight: bold;
         }
 
+        /* コンテナエリア */
+        .container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
 
-        /* サイドメニュー (以前のコードから変更なし) */
+        /* サイドメニュー */
         .sidebar {
             width: 220px;
             background-color: #e9ecef;
@@ -102,12 +109,12 @@
             display: block;
         }
 
-        /* メインコンテンツ (サービス一覧用スタイル) -  flex: 1; を再追加 */
+        /* メインコンテンツ */
         .main-content {
-            flex: 1; /*  ★ flex: 1; を再追加  ★ */
+            flex: 1;
             padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+            overflow-y: auto;
+            background-color: #fff;
         }
 
         .service-list-header {
@@ -211,7 +218,7 @@
             background-color: #f8f9fa;
         }
 
-        /* サービスロゴ用スタイル - 変更なし */
+        /* サービスロゴ用スタイル */
         .service-logo {
             width: 50px;
             height: 50px;
@@ -219,9 +226,8 @@
             margin-right: 5px;
         }
 
-
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU[...]
 </head>
 <body>
 
@@ -244,125 +250,127 @@
         </div>
     </div>
 
-    <div class="sidebar">
-        <ul>
-            <li><a href="#" class="home-icon">トップへ戻る</a></li>
-            <li><a href="#" class="mypage-icon">マイページ</a></li>
-            <li><a href="service.html" class="service-icon">サービス</a></li>
-            <li><a href="#" class="seminar-icon">セミナー</a></li>
-            <li><a href="#" class="ad-banner-icon">広告・バナー</a></li>
-            <li><a href="#" class="account-info-icon">アカウント情報</a></li>
-            <li><a href="#" class="rule-icon">利用規約</a></li>
-            <li><a href="#" class="logout-icon">退会</a></li>
-            <li><a href="#" class="contact-icon">お問い合わせ</a></li>
-        </ul>
-    </div>
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li><a href="#" class="home-icon">トップへ戻る</a></li>
+                <li><a href="#" class="mypage-icon">マイページ</a></li>
+                <li><a href="service.html" class="service-icon">サービス</a></li>
+                <li><a href="#" class="seminar-icon">セミナー</a></li>
+                <li><a href="#" class="ad-banner-icon">広告・バナー</a></li>
+                <li><a href="#" class="account-info-icon">アカウント情報</a></li>
+                <li><a href="#" class="rule-icon">利用規約</a></li>
+                <li><a href="#" class="logout-icon">退会</a></li>
+                <li><a href="#" class="contact-icon">お問い合わせ</a></li>
+            </ul>
+        </div>
 
-    <div class="main-content">
-        <div class="service-list-header">
-            <h2 class="service-list-title">サービス一覧</h2>
-            <div class="service-search-area">
-                <select>
-                    <option value="">カテゴリ検索</option>
-                    <option value="category1">カテゴリ1</option>
-                    <option value="category2">カテゴリ2</option>
-                </select>
-                <input type="text" placeholder="サービス名">
-                <button>
-                    <i class="fa fa-search"></i>
-                </button>
+        <div class="main-content">
+            <div class="service-list-header">
+                <h2 class="service-list-title">サービス一覧</h2>
+                <div class="service-search-area">
+                    <select>
+                        <option value="">カテゴリ検索</option>
+                        <option value="category1">カテゴリ1</option>
+                        <option value="category2">カテゴリ2</option>
+                    </select>
+                    <input type="text" placeholder="サービス名">
+                    <button>
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
             </div>
-        </div>
 
-        <table class="service-table">
-            <thead>
-                <tr>
-                    <th><input type="checkbox"></th>
-                    <th>サービス名</th>
-                    <th>請求日</th>
-                    <th>資料再ダウンロード</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>
-                        <img src="https://via.placeholder.com/50x50" alt="サービスロゴ" class="service-logo">
-                        DIRECT
-                        <span style="display:block; font-size: 0.8em; color: #777;">+DIRECT</span>
-                    </td>
-                    <td style="text-align: center;">2024年10月29日</td>
-                    <td style="text-align: center;">
-                        <a href="#" class="service-download-icon">
-                            <i class="fa fa-download"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>
-                        <img src="https://via.placeholder.com/50x50" alt="サービスロゴ" class="service-logo">
-                        〇〇
-                    </td>
-                    <td style="text-align: center;">2024年10月30日</td>
-                    <td style="text-align: center;">
-                        <a href="#" class="service-download-icon">
-                            <i class="fa fa-download"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>
-                        <img src="https://via.placeholder.com/50x50" alt="サービスロゴ" class="service-logo">
-                        〇〇
-                    </td>
-                    <td style="text-align: center;">2024年10月31日</td>
-                    <td style="text-align: center;">
-                        <a href="#" class="service-download-icon">
-                            <i class="fa fa-download"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>
-                        <img src="https://via.placeholder.com/50x50" alt="サービスロゴ" class="service-logo">
-                        〇〇
-                    </td>
-                    <td style="text-align: center;">2024年10月30日</td>
-                    <td style="text-align: center;">
-                        <a href="#" class="service-download-icon">
-                            <i class="fa fa-download"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>
-                        <img src="https://via.placeholder.com/50x50" alt="サービスロゴ" class="service-logo">
-                        〇〇
-                    </td>
-                    <td style="text-align: center;">2024年10月31日</td>
-                    <td style="text-align: center;">
-                        <a href="#" class="service-download-icon">
-                            <i class="fa fa-download"></i>
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+            <table class="service-table">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox"></th>
+                        <th>サービス名</th>
+                        <th>請求日</th>
+                        <th>資料再ダウンロード</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>
+                            <img src="https://via.placeholder.com/50x50" alt="サービスロゴ" class="service-logo">
+                            DIRECT
+                            <span style="display:block; font-size: 0.8em; color: #777;">+DIRECT</span>
+                        </td>
+                        <td style="text-align: center;">2024年10月29日</td>
+                        <td style="text-align: center;">
+                            <a href="#" class="service-download-icon">
+                                <i class="fa fa-download"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>
+                            <img src="https://via.placeholder.com/50x50" alt="サービスロゴ" class="service-logo">
+                            〇〇
+                        </td>
+                        <td style="text-align: center;">2024年10月30日</td>
+                        <td style="text-align: center;">
+                            <a href="#" class="service-download-icon">
+                                <i class="fa fa-download"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>
+                            <img src="https://via.placeholder.com/50x50" alt="サービスロゴ" class="service-logo">
+                            〇〇
+                        </td>
+                        <td style="text-align: center;">2024年10月31日</td>
+                        <td style="text-align: center;">
+                            <a href="#" class="service-download-icon">
+                                <i class="fa fa-download"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>
+                            <img src="https://via.placeholder.com/50x50" alt="サービスロゴ" class="service-logo">
+                            〇〇
+                        </td>
+                        <td style="text-align: center;">2024年10月30日</td>
+                        <td style="text-align: center;">
+                            <a href="#" class="service-download-icon">
+                                <i class="fa fa-download"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>
+                            <img src="https://via.placeholder.com/50x50" alt="サービスロゴ" class="service-logo">
+                            〇〇
+                        </td>
+                        <td style="text-align: center;">2024年10月31日</td>
+                        <td style="text-align: center;">
+                            <a href="#" class="service-download-icon">
+                                <i class="fa fa-download"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
-        <div class="pagination">
-            <a href="#">&lt;</a>
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">&gt;</a>
-        </div>
+            <div class="pagination">
+                <a href="#">&lt;</a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">&gt;</a>
+            </div>
 
-        <div style="text-align: right; margin-top: 10px;">
-            <a href="#">商品・サービス一覧はこちら &gt;&gt;</a>
+            <div style="text-align: right; margin-top: 10px;">
+                <a href="#">商品・サービス一覧はこちら &gt;&gt;</a>
+            </div>
         </div>
     </div>
 
