@@ -50,7 +50,20 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
+        }
+        .account-info .header {
+            background: #6673a5;
+            color: white;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        .account-info p {
+            text-align: left;
+            margin-bottom: 10px;
         }
         .account-info img {
             width: 100px;
@@ -58,9 +71,6 @@
             border-radius: 50%;
             background: gray;
             margin-bottom: 15px;
-        }
-        .account-info p {
-            text-align: center;
         }
         /* 右側のサービスセクション */
         .right-sections {
@@ -117,6 +127,7 @@
     <div class="main-content">
         <!-- アカウント情報 -->
         <div class="account-info">
+            <div class="header">アカウント情報</div>
             <img src="#" alt="プロフィール画像">
             <p>株式会社クラブネッツ</p>
             <p>田中 太郎</p>
