@@ -12,16 +12,102 @@
             font-family: Arial, sans-serif;
         }
         body {
-            background-color: #f0f2f5; /* 背景色を再設定 */
-            padding: 20px; /* body 全体にpaddingを追加して余白を作る */
+            display: flex; /* body を flex コンテナにする (サイドバーとメインコンテンツを横並びにするため再追加) */
+            min-height: 100vh;
+            background-color: #f0f2f5;
         }
 
-        /* ヘッダーエリアとサイドバー関連のCSSは削除 */
+        /* ヘッダーエリア (以前のコードから変更なし) */
+        .header-area {
+            background-color: #e9ecef;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-        /* メインコンテンツ (サービス一覧用スタイル) - service.html専用に調整 */
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-left h1 {
+            font-size: 20px;
+            color: #495057;
+            margin-right: 20px;
+        }
+
+        .header-search input {
+            padding: 8px 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-icon {
+            margin-right: 15px;
+            font-size: 24px;
+            color: #495057;
+        }
+
+        .header-user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-user-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #adb5bd;
+            margin-right: 5px;
+        }
+
+        .header-username {
+            color: #495057;
+            font-weight: bold;
+        }
+
+
+        /* サイドメニュー (以前のコードを再利用) */
+        .sidebar {
+            width: 220px;
+            background-color: #e9ecef;
+            padding: 20px;
+            color: #495057;
+            border-right: 1px solid #ced4da;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar ul li:hover {
+            background-color: #ced4da;
+        }
+
+        .sidebar ul li a {
+            color: #495057;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* メインコンテンツ (サービス一覧用スタイル) - 変更なし */
         .main-content {
-            max-width: 1200px; /* コンテンツ幅をmaxWidthで制限 (必要に応じて調整) */
-            margin: 0 auto; /* 水平中央配置 */
+            flex: 1; /* メインコンテンツが残りの領域を占めるように flex: 1; を再追加 */
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .service-list-header {
@@ -125,12 +211,12 @@
             background-color: #f8f9fa;
         }
 
-        /* サービスロゴ用スタイル */
+        /* サービスロゴ用スタイル - 変更なし */
         .service-logo {
             width: 50px;
             height: 50px;
-            vertical-align: middle; /* ロゴをテキスト中央に配置 */
-            margin-right: 5px; /* ロゴとサービス名のスペース */
+            vertical-align: middle;
+            margin-right: 5px;
         }
 
 
@@ -139,6 +225,38 @@
 </head>
 <body>
 
+    <div class="header-area">
+        <div class="header-left">
+            <h1>ガス業界はサービス情報サイト</h1>
+            <div class="header-search">
+                <input type="text" placeholder="サービス名・カテゴリー(WEB検索)">
+            </div>
+        </div>
+        <div class="header-right">
+            <i class="header-icon fa-solid fa-bell"></i>
+            <i class="header-icon fa-solid fa-gear"></i>
+            <div class="header-user-info">
+                <div class="header-user-icon"></div>
+                <span class="header-username">murakawa</span>
+                <button class="button logout-icon">ログアウト</button>
+                <button class="button mypage-icon">マイページ</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <ul>
+            <li><a href="#" class="home-icon">トップへ戻る</a></li>
+            <li><a href="#" class="mypage-icon">マイページ</a></li>
+            <li><a href="service.html" class="service-icon">サービス</a></li>
+            <li><a href="#" class="seminar-icon">セミナー</a></li>
+            <li><a href="#" class="ad-banner-icon">広告・バナー</a></li>
+            <li><a href="#" class="account-info-icon">アカウント情報</a></li>
+            <li><a href="#" class="rule-icon">利用規約</a></li>
+            <li><a href="#" class="logout-icon">退会</a></li>
+            <li><a href="#" class="contact-icon">お問い合わせ</a></li>
+        </ul>
+    </div>
 
     <div class="main-content">
         <div class="service-list-header">
