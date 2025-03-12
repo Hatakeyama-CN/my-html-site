@@ -12,99 +12,16 @@
             font-family: Arial, sans-serif;
         }
         body {
-            display: flex;
-            min-height: 100vh;
-            background-color: #f0f2f5;
-        }
-        /* ヘッダーエリア (以前のコードから変更なし) */
-        .header-area {
-            background-color: #e9ecef;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            background-color: #f0f2f5; /* 背景色を再設定 */
+            padding: 20px; /* body 全体にpaddingを追加して余白を作る */
         }
 
-        .header-left {
-            display: flex;
-            align-items: center;
-        }
+        /* ヘッダーエリアとサイドバー関連のCSSは削除 */
 
-        .header-left h1 {
-            font-size: 20px;
-            color: #495057;
-            margin-right: 20px;
-        }
-
-        .header-search input {
-            padding: 8px 10px;
-            border: 1px solid #ced4da;
-            border-radius: 4px;
-        }
-
-        .header-right {
-            display: flex;
-            align-items: center;
-        }
-
-        .header-icon {
-            margin-right: 15px;
-            font-size: 24px;
-            color: #495057;
-        }
-
-        .header-user-info {
-            display: flex;
-            align-items: center;
-        }
-
-        .header-user-icon {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: #adb5bd;
-            margin-right: 5px;
-        }
-
-        .header-username {
-            color: #495057;
-            font-weight: bold;
-        }
-
-
-        /* サイドメニュー (以前のコードから変更なし) */
-        .sidebar {
-            width: 220px;
-            background-color: #e9ecef;
-            padding: 20px;
-            color: #495057;
-            border-right: 1px solid #ced4da;
-        }
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-        .sidebar ul li {
-            margin: 10px 0;
-            padding: 8px 15px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        .sidebar ul li:hover {
-            background-color: #ced4da;
-        }
-
-        .sidebar ul li a {
-            color: #495057;
-            text-decoration: none;
-            display: block;
-        }
-
-        /* メインコンテンツ (サービス一覧用スタイル) */
+        /* メインコンテンツ (サービス一覧用スタイル) - service.html専用に調整 */
         .main-content {
-            flex: 1;
-            padding: 20px;
+            max-width: 1200px; /* コンテンツ幅をmaxWidthで制限 (必要に応じて調整) */
+            margin: 0 auto; /* 水平中央配置 */
         }
 
         .service-list-header {
@@ -138,7 +55,7 @@
             border-spacing: 0;
             border: 1px solid #ced4da;
             border-radius: 8px;
-            overflow: hidden; /* 角丸を適用するためにoverflow: hidden; を追加 */
+            overflow: hidden;
         }
 
         .service-table thead {
@@ -158,30 +75,29 @@
         }
 
         .service-table tbody tr:last-child td {
-            border-bottom: none; /* tbody 最後の行の下ボーダーを削除 */
+            border-bottom: none;
         }
 
         .service-table td:first-child {
-            text-align: center; /* チェックボックスを中央寄せ */
-            width: 50px; /* チェックボックス列の幅を調整 */
+            text-align: center;
+            width: 50px;
         }
 
-        .service-table th:nth-child(3), /* 請求日 */
+        .service-table th:nth-child(3),
         .service-table td:nth-child(3) {
-            width: 150px; /* 請求日列の幅を調整 */
-            text-align: center; /* 請求日を中央寄せ */
+            width: 150px;
+            text-align: center;
         }
 
-        .service-table th:nth-child(4), /* 資料再ダウンロード */
+        .service-table th:nth-child(4),
         .service-table td:nth-child(4) {
-            width: 150px; /* 資料再ダウンロード列の幅を調整 */
-            text-align: center; /* 資料再ダウンロードを中央寄せ */
+            width: 150px;
+            text-align: center;
         }
-
 
         .service-download-icon {
             color: #007bff;
-            font-size: 20px; /* ダウンロードアイコンサイズ調整 */
+            font-size: 20px;
         }
 
         .pagination {
@@ -209,15 +125,13 @@
             background-color: #f8f9fa;
         }
 
-
-        /* アイコン用CSS (Font Awesome) (以前のコードから変更なし) */
-        .icon-button::before {
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            margin-right: 5px;
+        /* サービスロゴ用スタイル */
+        .service-logo {
+            width: 50px;
+            height: 50px;
+            vertical-align: middle; /* ロゴをテキスト中央に配置 */
+            margin-right: 5px; /* ロゴとサービス名のスペース */
         }
-        .logout-icon::before { content: "\f2f5"; }
-        .mypage-icon::before { content: "\f007"; }
 
 
     </style>
@@ -225,38 +139,6 @@
 </head>
 <body>
 
-    <div class="header-area">
-        <div class="header-left">
-            <h1>ガス業界はサービス情報サイト</h1>
-            <div class="header-search">
-                <input type="text" placeholder="サービス名・カテゴリー(WEB検索)">
-            </div>
-        </div>
-        <div class="header-right">
-            <i class="header-icon fa-solid fa-bell"></i>
-            <i class="header-icon fa-solid fa-gear"></i>
-            <div class="header-user-info">
-                <div class="header-user-icon"></div>
-                <span class="header-username">murakawa</span>
-                <button class="button logout-icon">ログアウト</button>
-                <button class="button mypage-icon">マイページ</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="sidebar">
-        <ul>
-            <li><a href="#" class="home-icon">トップへ戻る</a></li>
-            <li><a href="#" class="mypage-icon">マイページ</a></li>
-            <li><a href="#" class="service-icon">サービス</a></li>
-            <li><a href="#" class="seminar-icon">セミナー</a></li>
-            <li><a href="#" class="ad-banner-icon">広告・バナー</a></li>
-            <li><a href="#" class="account-info-icon">アカウント情報</a></li>
-            <li><a href="#" class="rule-icon">利用規約</a></li>
-            <li><a href="#" class="logout-icon">退会</a></li>
-            <li><a href="#" class="contact-icon">お問い合わせ</a></li>
-        </ul>
-    </div>
 
     <div class="main-content">
         <div class="service-list-header">
@@ -266,7 +148,7 @@
                     <option value="">カテゴリ検索</option>
                     <option value="category1">カテゴリ1</option>
                     <option value="category2">カテゴリ2</option>
-                    </select>
+                </select>
                 <input type="text" placeholder="サービス名">
                 <button>
                     <i class="fa fa-search"></i>
@@ -287,7 +169,7 @@
                 <tr>
                     <td><input type="checkbox"></td>
                     <td>
-                        <img src="https://via.placeholder.com/50x50" alt="サービスロゴ">
+                        <img src="https://via.placeholder.com/50x50" alt="サービスロゴ" class="service-logo">
                         DIRECT
                         <span style="display:block; font-size: 0.8em; color: #777;">+DIRECT</span>
                     </td>
@@ -301,7 +183,7 @@
                 <tr>
                     <td><input type="checkbox"></td>
                     <td>
-                        <img src="https://via.placeholder.com/50x50" alt="サービスロゴ">
+                        <img src="https://via.placeholder.com/50x50" alt="サービスロゴ" class="service-logo">
                         〇〇
                     </td>
                     <td style="text-align: center;">2024年10月30日</td>
@@ -314,7 +196,7 @@
                 <tr>
                     <td><input type="checkbox"></td>
                     <td>
-                        <img src="https://via.placeholder.com/50x50" alt="サービスロゴ">
+                        <img src="https://via.placeholder.com/50x50" alt="サービスロゴ" class="service-logo">
                         〇〇
                     </td>
                     <td style="text-align: center;">2024年10月31日</td>
@@ -327,7 +209,7 @@
                 <tr>
                     <td><input type="checkbox"></td>
                     <td>
-                        <img src="https://via.placeholder.com/50x50" alt="サービスロゴ">
+                        <img src="https://via.placeholder.com/50x50" alt="サービスロゴ" class="service-logo">
                         〇〇
                     </td>
                     <td style="text-align: center;">2024年10月30日</td>
@@ -340,7 +222,7 @@
                 <tr>
                     <td><input type="checkbox"></td>
                     <td>
-                        <img src="https://via.placeholder.com/50x50" alt="サービスロゴ">
+                        <img src="https://via.placeholder.com/50x50" alt="サービスロゴ" class="service-logo">
                         〇〇
                     </td>
                     <td style="text-align: center;">2024年10月31日</td>
@@ -350,7 +232,7 @@
                         </a>
                     </td>
                 </tr>
-                </tbody>
+            </tbody>
         </table>
 
         <div class="pagination">
