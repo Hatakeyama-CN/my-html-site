@@ -12,7 +12,7 @@
             font-family: Arial, sans-serif;
         }
         body {
-            display: flex; /* body を flex コンテナにする (サイドバーとメインコンテンツを横並びにするため再追加) */
+            display: flex; /* body を flex コンテナにする (サイドバーとメインコンテンツを横並びにする) */
             min-height: 100vh;
             background-color: #f0f2f5;
         }
@@ -73,7 +73,7 @@
         }
 
 
-        /* サイドメニュー (以前のコードを再利用) */
+        /* サイドメニュー (以前のコードから変更なし) */
         .sidebar {
             width: 220px;
             background-color: #e9ecef;
@@ -102,9 +102,9 @@
             display: block;
         }
 
-        /* メインコンテンツ (サービス一覧用スタイル) - 変更なし */
+        /* メインコンテンツ (サービス一覧用スタイル) -  flex: 1; を再追加 */
         .main-content {
-            flex: 1; /* メインコンテンツが残りの領域を占めるように flex: 1; を再追加 */
+            flex: 1; /*  ★ flex: 1; を再追加  ★ */
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
