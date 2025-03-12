@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マイページ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+        /* サイドメニュー */
+        .sidebar {
+            width: 220px;
+            background-color: #6673a5;
+            padding: 20px;
+            color: white;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        /* メインコンテンツ */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+        .section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+        }
+        .profile img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: gray;
+            margin-right: 15px;
+        }
+        .header {
+            background: #6673a5;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .button {
+            background: #6673a5;
+            color: white;
+            padding: 8px 12px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- サイドメニュー -->
+    <div class="sidebar">
+        <ul>
+            <li><a href="#">トップへ戻る</a></li>
+            <li><a href="#">マイページ</a></li>
+            <li><a href="#">サービス</a></li>
+            <li><a href="#">セミナー</a></li>
+            <li><a href="#">広告・バナー</a></li>
+            <li><a href="#">アカウント情報</a></li>
+            <li><a href="#">利用規約</a></li>
+            <li><a href="#">退会</a></li>
+            <li><a href="#">お問い合わせ</a></li>
+        </ul>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div class="main-content">
+        <h2>マイページ</h2>
+
+        <!-- アカウント情報 -->
+        <div class="section">
+            <div class="header">アカウント情報</div>
+            <div class="profile">
+                <img src="#" alt="プロフィール画像">
+                <div>
+                    <p>株式会社クラブネッツ</p>
+                    <p>田中 太郎</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- サービス -->
+        <div class="section">
+            <div class="header">サービス</div>
+            <div class="buttons">
+                <button class="button">サービス一覧</button>
+                <button class="button">商品・サービス一覧</button>
+            </div>
+        </div>
+
+        <!-- セミナー -->
+        <div class="section">
+            <div class="header">セミナー</div>
+            <div class="buttons">
+                <button class="button">掲載セミナー一覧</button>
+                <button class="button">説明会・セミナー情報</button>
+            </div>
+        </div>
+
+        <!-- 広告・バナー -->
+        <div class="section">
+            <div class="header">広告・バナー</div>
+            <div class="buttons">
+                <button class="button">広告一覧</button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
