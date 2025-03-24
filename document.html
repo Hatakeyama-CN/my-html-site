@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マイページ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+        /* サイドメニュー */
+        .sidebar {
+            width: 220px;
+            background-color: #6673a5;
+            padding: 20px;
+            color: white;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        /* メインコンテンツ */
+        .main-content {
+            flex: 1;
+            display: flex;
+            padding: 20px;
+            gap: 20px; /* セクション間の隙間 */
+        }
+        /* 左側のアカウント情報 */
+        .account-info {
+            width: 250px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .account-info .header {
+            background: #6673a5;
+            color: white;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        .account-info p {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        .account-info img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: gray;
+            margin-bottom: 15px;
+        }
+        /* 右側のサービスセクション */
+        .right-sections {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* セクション間の隙間 */
+        }
+        .section {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background: #6673a5;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .button {
+            background: #6673a5;
+            color: white;
+            padding: 8px 12px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .logo-container {
+        display: flex;
+        justify-content: center; /* 中央揃え */
+        gap: 10px; /* ロゴ同士の間隔を狭く */
+        margin: 10px 0;
+        }
+        .logo-box {
+            width: 80px;
+            height: 80px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- サイドメニュー -->
+    <div class="sidebar">
+        <ul>
+            <li><a href="#">トップへ戻る</a></li>
+            <li><a href="#">請求した資料</a></li>
+            <li><a href="#">お気に入り追加</a></li>
+            <li><a href="#">予約済みセミナー</a></li>
+            <li><a href="service.html">サービス</a></li>
+            <li><a href="#">広告・バナー</a></li>
+            <li><a href="#">アカウント情報</a></li>
+            <li><a href="#">利用規約</a></li>
+            <li><a href="#">退会</a></li>
+            <li><a href="#">お問い合わせ</a></li>
+            <li><a href="#">お知らせ</a></li>
+        </ul>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div class="main-content">
+        <!-- アカウント情報 -->
+        <div class="account-info">
+            <div class="header">アカウント情報</div>
+            <img src="#" alt="プロフィール画像">
+            <p>株式会社クラブネッツ</p>
+            <p>田中 太郎</p>
+        </div>
+
+        <!-- 右側のセクション -->
+        <div class="right-sections">
+            <!-- サービス -->
+            <div class="section">
+                <div class="header">請求済み資料</div>
+                <div class="logo-container">
+                    <div class="logo-box">ロゴ1</div>
+                    <div class="logo-box">ロゴ2</div>
+                    <div class="logo-box">ロゴ3</div>
+                </div>
+                <div class="buttons">
+                    <a href="service.html"><button class="button">請求済み資料一覧</button></a> <!-- リンクを追加 -->
+                    <button class="button">商品・サービス一覧</button>
+                </div>
+            </div>
+
+            <!-- セミナー -->
+            <div class="section">
+                <div class="header">お気に入り</div>
+                <div class="logo-container">
+                    <div class="logo-box">ロゴ1</div>
+                    <div class="logo-box">ロゴ2</div>
+                    <div class="logo-box">ロゴ3</div>
+                </div>
+                <div class="buttons">
+                    <button class="button">お気に入り一覧</button>
+                    <button class="button">説明会・セミナー情報</button>
+                </div>
+            </div>
+
+            <!-- 広告・バナー -->
+            <div class="section">
+                <div class="header">予約済み説明会</div>
+                <div class="logo-container">
+                    <div class="logo-box">ロゴ1</div>
+                    <div class="logo-box">ロゴ2</div>
+                    <div class="logo-box">ロゴ3</div>
+                </div>
+                <div class="buttons">
+                    <button class="button">広告一覧</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
